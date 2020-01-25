@@ -1,0 +1,10 @@
+<div class="card mt-4">
+  <h4 class="card-header">You're logged in!</h4>
+  <div class="card-body">
+    <h6>Items from secure api end point</h6>
+    <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+    <ul *ngIf="items">
+      <li *ngFor="let item of items">{{item.content}} {{item.timestamp}}</li>
+    </ul>
+  </div>
+</div>
