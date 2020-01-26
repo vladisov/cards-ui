@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators';
 
 import {environment} from '@environments/environment';
 import {User} from '@app/_models/user';
+import {AuthInfo} from '@app/_models/auth-info';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
@@ -21,8 +22,9 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${environment.apiUrl}/auth`, {username, password})
-      .pipe(map(user => {
+    return this.http.post<AuthInfo>(`${environment.apiUrl}/auth`, {username, password})
+      .pipe(map(authInfo => {
+        const user = {username, password, token: authInfo.token};
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);

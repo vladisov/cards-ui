@@ -6,10 +6,10 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {JwtInterceptor} from '@app/_helpers/jwt.interceptor';
 import {ErrorInterceptor} from '@app/_helpers/error.interceptor';
-import {fakeBackendProvider} from '@app/_helpers/fake-bakend';
 import {HomeComponent} from '@app/home/home.component';
 import {LoginComponent} from '@app/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -17,7 +17,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     appRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   declarations: [
     AppComponent,
@@ -26,9 +27,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
 
-    fakeBackendProvider
+    // fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
