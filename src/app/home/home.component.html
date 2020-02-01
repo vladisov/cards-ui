@@ -1,10 +1,40 @@
-<div class="card mt-4">
-  <h4 class="card-header">You're logged in!</h4>
-  <div class="card-body">
-    <h6>Items from secure api end point</h6>
+<!-- <div fxLayout="column">
+  <h4>You're logged in!</h4>
+  <div fxLayout="column">
     <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-    <ul *ngIf="items">
-      <li *ngFor="let item of items">{{item.content}} {{item.timestamp}}</li>
-    </ul>
+    <mat-list *ngIf="items">
+      <mat-list-item class="list-item" *ngFor="let item of items">
+        <mat-card>
+          <mat-card-subtitle>
+            {{item.type}}
+          </mat-card-subtitle>
+          <mat-card-content>
+            {{item.content}}
+          </mat-card-content>
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
   </div>
+</div> -->
+<div fxLayout="column">
+  <div *ngIf="!loading" class="random-card-row" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="random-card-container" fxFlex="50" fxLayout="row" fxLayoutAlign="center stretch">
+        <mat-card-content fxFill class="card-content">
+          <div  *ngIf="flipped">
+            {{randomItem.content}}
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" class="card-header" *ngIf="!flipped">
+            {{randomItem.header}}
+          </div>
+        </mat-card-content>
+      </mat-card>
+  </div>
+  <div fxLayout="row" fxFlexOffset=".8" fxLayoutAlign="center center">
+    <div>
+      <button (click)="flip()" class="black-btn">Flip</button>
+    </div>
+    <div fxFlexOffset=".5">
+      <button (click)="next()" class="black-btn">Next</button>
+    </div>
+</div>
 </div>

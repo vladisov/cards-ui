@@ -10,6 +10,7 @@ import {HomeComponent} from '@app/home/home.component';
 import {LoginComponent} from '@app/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -18,7 +19,12 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     HttpClientModule,
     appRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatListModule
   ],
   declarations: [
     AppComponent,
@@ -28,8 +34,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
-
-    // fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

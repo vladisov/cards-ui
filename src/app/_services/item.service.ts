@@ -11,4 +11,8 @@ export class ItemService {
   getAll() {
     return this.http.get<Item[]>(`${environment.apiUrl}/api/item/all`);
   }
+
+  getRandom() {
+    return this.http.get<Item[]>(`${environment.apiUrl}/api/item/random`);
+  }
 }

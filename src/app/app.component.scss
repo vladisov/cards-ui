@@ -1,0 +1,20 @@
+.divider {
+        border-top-color: #000000;
+        margin-bottom: 2rem;
+}
+
+.nav-bar {
+        height: 2rem;
+}
+
+.logout-link {
+        font-family: 'Courier New', Courier, monospace;
+        margin-right: 0.5rem;
+        font-weight: 600;
+        cursor:pointer;
+        text-decoration: underline;
+
+        &:active {
+                text-decoration: none;
+        }
+}

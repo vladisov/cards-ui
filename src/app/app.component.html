@@ -1,10 +1,10 @@
 <!-- nav -->
-<nav *ngIf="currentUser" class="navbar navbar-expand navbar-dark bg-dark">
-  <div class="navbar-nav">
-    <a class="nav-item nav-link" routerLink="/">Home</a>
-    <a (click)="logout()" class="nav-item nav-link">Logout</a>
+<nav  *ngIf="currentUser">
+  <div class="nav-bar" fxLayout="row" fxLayoutAlign="end center">
+    <a class="logout-link" (click)="logout()">Logout</a>
   </div>
 </nav>
+<mat-divider class="divider"></mat-divider>
 
 <!-- main app container -->
 <router-outlet></router-outlet>

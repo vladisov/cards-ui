@@ -1,0 +1,36 @@
+.login-container {
+  height: 100vh;
+
+  .login-container-internal {
+    height: 40%;
+
+    .card-container {
+      padding: 3rem;
+      border: 1px black solid;
+      height: initial !important;
+    }
+  }
+}
+
+.sign-in-btn {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px black solid;
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 6rem;
+  width: 100%;
+  background-color: white;
+  color:black;
+}
+
+.login-title, ::ng-deep.mat-form-field-infix {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
