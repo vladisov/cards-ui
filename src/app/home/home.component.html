@@ -1,21 +1,3 @@
-<!-- <div fxLayout="column">
-  <h4>You're logged in!</h4>
-  <div fxLayout="column">
-    <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-    <mat-list *ngIf="items">
-      <mat-list-item class="list-item" *ngFor="let item of items">
-        <mat-card>
-          <mat-card-subtitle>
-            {{item.type}}
-          </mat-card-subtitle>
-          <mat-card-content>
-            {{item.content}}
-          </mat-card-content>
-        </mat-card>
-      </mat-list-item>
-    </mat-list>
-  </div>
-</div> -->
 <div fxLayout="column">
   <div *ngIf="!loading" class="random-card-row" fxLayout="row" fxLayoutAlign="center center">
       <mat-card class="random-card-container" fxFlex="50" fxLayout="row" fxLayoutAlign="center stretch">
@@ -31,10 +13,10 @@
   </div>
   <div fxLayout="row" fxFlexOffset=".8" fxLayoutAlign="center center">
     <div>
-      <button (click)="flip()" class="black-btn">Flip</button>
+      <button (click)="flip()" class="black-btn" mat-raised-button>Flip</button>
     </div>
     <div fxFlexOffset=".5">
-      <button (click)="next()" class="black-btn">Next</button>
+      <button (click)="next()" class="black-btn" mat-raised-button>Next</button>
     </div>
 </div>
 </div>
