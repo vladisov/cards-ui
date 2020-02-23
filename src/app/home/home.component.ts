@@ -1,11 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { first } from "rxjs/operators";
-import { ItemService } from "@app/_services/item.service";
-import { Item } from "@app/_models/item";
+import {Component, OnInit} from '@angular/core';
+import {ItemService} from '@app/_services/item.service';
+import {Item} from '@app/_models/item';
 
 @Component({
-  templateUrl: "home.component.html",
-  styleUrls: ["home.component.scss"]
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.scss']
 })
 export class HomeComponent implements OnInit {
   loading = false;
@@ -32,11 +31,10 @@ export class HomeComponent implements OnInit {
     this.flipped = !this.flipped;
   }
 
-  next():void {
+  next(): void {
     this.itemService.getRandom().subscribe(items => {
       if (items && items[0]) {
-        const item = items[0];
-        this.randomItem = item;
+        this.randomItem = items[0];
         this.randomItem.header = this.trim(this.randomItem.header);
         this.randomItem.content = this.trim(this.randomItem.content);
         this.loading = false;
@@ -45,8 +43,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  private trim(str:string):string {
-     return str ? str.trim() : null;
+  private trim(str: string): string {
+    return str ? str.trim() : null;
   }
-  
+
 }
