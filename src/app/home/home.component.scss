@@ -1,0 +1,48 @@
+.list-item {
+  height: 100% !important;
+  white-space: pre-wrap;
+}
+
+.card-content {
+  white-space: pre-wrap;
+  div {
+    height: 100%;
+    // background-color: #F1F1F2;
+    border-radius: 5px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    color: black;
+    min-height: 20vh;
+  }
+}
+
+.random-card-row {
+  .random-card-container {
+    // box-shadow: none;
+    border: 1px black solid;
+    // overflow-y: auto;
+    min-height: 20vh;
+  }
+}
+
+.black-btn {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px black solid;
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 6rem;
+  &:hover {
+    background: none;
+
+  }
+  &:focus {
+    outline:none
+  }
+}
+
+.card-header {
+  font-size: 18px;
+}

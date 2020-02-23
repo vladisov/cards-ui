@@ -28,11 +28,20 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -72,6 +81,10 @@
           "configurations": {
             "production": {
               "browserTarget": "cards-ui:build:production"
+            },
+            "dev": {
+              "browserTarget": "cards-ui:build:dev",
+              "proxyConfig": "./proxy.conf.json"
             }
           }
         },
@@ -93,6 +106,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +138,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cards-ui"
 }

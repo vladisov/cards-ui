@@ -1,0 +1,22 @@
+<div fxLayout="column">
+  <div *ngIf="!loading" class="random-card-row" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="random-card-container" fxFlex.xs="95" fxLayoutAlign="center stretch">
+        <mat-card-content fxFill class="card-content">
+          <div *ngIf="flipped">
+            {{randomItem.content}}
+          </div>
+          <div *ngIf="!flipped" fxLayout="row" fxLayoutAlign="center center" class="card-header">
+            {{randomItem.header}}
+          </div>
+        </mat-card-content>
+      </mat-card>
+  </div>
+  <div fxLayout="row" fxFlexOffset=".8" fxLayoutGap="10px" fxLayoutAlign="center center">
+    <div>
+      <button (click)="flip()" class="black-btn" mat-raised-button>Flip</button>
+    </div>
+    <div fxFlexOffset=".5">
+      <button (click)="next()" class="black-btn" mat-raised-button>Next</button>
+    </div>
+</div>
+</div>

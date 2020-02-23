@@ -1,0 +1,20 @@
+{
+  "/auth": {
+    "target": "http://cs.vladisov.com:8082/auth",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/auth": ""
+    }
+  },
+  "/api": {
+    "target": "http://cs.vladisov.com:8082/api",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
